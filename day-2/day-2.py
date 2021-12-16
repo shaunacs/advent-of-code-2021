@@ -9,3 +9,18 @@ def get_puzzle_input(input_file):
         directions.append(line.rstrip())
 
     return directions
+
+
+def split_command(command):
+    """Takes in a command (Ex. 'up 3') and splits on space"""
+
+    return command.split()
+
+
+
+
+
+directions_lst = get_puzzle_input('day-2-input.txt')
+
+for direction in directions_lst:
+    print(split_command(direction))
