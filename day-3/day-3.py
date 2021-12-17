@@ -27,4 +27,17 @@ def count_bits(input_file):
     
     return bit_count
 
-print(count_bits('test-input.txt'))
+
+def find_gamma_rate(bit_count):
+    gamma_rate = ""
+
+    for place in bit_count:
+        if bit_count[place][0] > bit_count[place][1]:
+            gamma_rate = gamma_rate + "0"
+        elif bit_count[place][1] > bit_count[place][0]:
+            gamma_rate = gamma_rate + "1"
+    
+    return int(gamma_rate)
+
+print(find_gamma_rate(count_bits('test-input.txt')))
+
