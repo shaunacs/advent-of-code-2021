@@ -53,25 +53,24 @@ def execute_commands2(command, location):
         location['horizontal'] += movement_num
         location['depth'] += (location.get('aim') * movement_num)
     elif command[0] == 'down':
-        # location['depth'] += movement_num
-        # aim += movement_num
         location['aim'] += movement_num
     elif command[0] == 'up':
-        # location['depth'] -= movement_num
         location['aim'] -= movement_num
     
     return location
 
 
+def solve_day2_2():
 
-starting_location = {'horizontal': 0,
-                    'depth': 0,
-                    'aim': 0}
+    starting_location = {'horizontal': 0,
+                        'depth': 0,
+                        'aim': 0}
 
-directions_lst = get_puzzle_input('day-2-input.txt')
-# directions_lst = get_puzzle_input('test-input.txt')
+    directions_lst = get_puzzle_input('day-2-input.txt')
 
-for direction in directions_lst:
-    execute_commands2(split_command(direction), starting_location)
+    for direction in directions_lst:
+        execute_commands2(split_command(direction), starting_location)
 
-final_answer = starting_location['horizontal'] * starting_location['depth']
+    final_answer = starting_location['horizontal'] * starting_location['depth']
+
+    return final_answer
