@@ -39,5 +39,20 @@ def find_gamma_rate(bit_count):
     
     return int(gamma_rate)
 
-print(find_gamma_rate(count_bits('test-input.txt')))
+
+def find_epsilon_rate(bit_count):
+    epsilon_rate = ""
+
+    for place in bit_count:
+        if bit_count[place][0] < bit_count[place][1]:
+            epsilon_rate = epsilon_rate + "0"
+        elif bit_count[place][1] < bit_count[place][0]:
+            epsilon_rate = epsilon_rate + "1"
+    
+    return epsilon_rate
+
+
+# print(find_gamma_rate(count_bits('test-input.txt')))
+print(find_epsilon_rate(count_bits('test-input.txt')))
+
 
